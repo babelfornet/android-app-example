@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0-android</TargetFramework>
+		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+		<OutputType>Exe</OutputType>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<ApplicationId>com.companyname.AndroidApp</ApplicationId>
+		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Babel.Obfuscator" Version="10.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<Use>tagassembly=true</Use>
+		<StringEncryption>true</StringEncryption>
+		<ControlFlowObfuscation>goto=on;if=on;switch=on;case=on;call=on;true</ControlFlowObfuscation>
+		<DynamicProxy>all</DynamicProxy>
+		<ResourceEncryption>true</ResourceEncryption>
+		<VerboseLevel>3</VerboseLevel>
+		<XmlRules>
+			<Rules>
+				<Rule name="rule1" feature="renaming" exclude="false">
+					<Pattern>*</Pattern>
+				</Rule>
+			</Rules>
+		</XmlRules>
+	</PropertyGroup>
+</Project>
